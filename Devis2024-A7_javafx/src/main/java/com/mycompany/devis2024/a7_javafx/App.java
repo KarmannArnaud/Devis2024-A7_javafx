@@ -19,13 +19,14 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) {
-        var label = new Label("Voulez vous crée un immeuble ou un batiment.");
+        var label = new Label("Voulez-vous crée un immeuble ou un batiment?");
         label.setFont(new Font(20));
         
        
         Button Bim = new Button("Immeuble");
      
         Button Bbat = new Button("Batiment");
+        
         HBox Buttonbar = new HBox (40, Bim, Bbat);
          Buttonbar.setAlignment(Pos.CENTER);
          Buttonbar.setTranslateY(-100);   
