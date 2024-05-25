@@ -5,7 +5,9 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Font;
@@ -24,6 +26,20 @@ public class App extends Application {
         
        
         Button Bim = new Button("Immeuble");
+        Bim.setOnAction(evt -> { 
+        GridPane pane = new GridPane();
+        pane.setAlignment(Pos.CENTER);
+        pane.setHgap(5.5);
+        pane.setVgap(5.5);
+        
+        // Place nodes in the pane at positions column,row
+        pane.add(new Label("Nom de L'immeuble :"), 0, 0);
+        TextField NomIm = new TextField();
+        pane.add(NomIm, 1, 0);
+        pane.add(new Label("Nombre d'etage :"), 0, 1);
+        TextField NbNiveau = new TextField();
+          pane.add(NbNiveau, 1, 1);
+        });
      
         Button Bbat = new Button("Batiment");
         
