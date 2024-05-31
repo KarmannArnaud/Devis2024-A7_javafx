@@ -6,8 +6,12 @@ package devis;
 
 /**
  *
- * @author akarmann01
+ * @author gaspa
  */
-public class main {
+public abstract class Ouverture {
+    int idOuverture;
+    double dimX;
+    double dimY;
+    double surface;
     
-}
+ }
