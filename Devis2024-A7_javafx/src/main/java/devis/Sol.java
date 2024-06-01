@@ -36,6 +36,11 @@ public class Sol {
     }
     @Override
     public String toString() {
+        if(!listeRevetements.isEmpty()){
     return ("Sol;"+idSol+";"+listeCoins.get(0).idCoin+";"+listeCoins.get(1).idCoin+";"+listeCoins.get(2).idCoin+";"+listeCoins.get(3).idCoin+";"+listeRevetements.get(0));
+    }
+        else{
+            return ("Sol;"+idSol+";"+listeCoins.get(0).idCoin+";"+listeCoins.get(1).idCoin+";"+listeCoins.get(2).idCoin+";"+listeCoins.get(3).idCoin);
+        }
     }
 }

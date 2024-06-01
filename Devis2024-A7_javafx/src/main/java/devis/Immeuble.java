@@ -11,12 +11,11 @@ import java.io.PrintWriter;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-
 public class Immeuble extends Batiment {
     String idImmeuble;
     
     public Immeuble(String id){
-        this.listeNiveau = new ArrayList<Niveau>();
+        this.listeNiveau=new ArrayList<Niveau>();
         this.idImmeuble=id;
         this.idBatiment=id;
     }
@@ -25,15 +24,19 @@ public class Immeuble extends Batiment {
         for (Niveau niveau : listeNiveau) {
             for (Mur mur : niveau.listeMurs){
                 mur.surfaceMur(niveau.hauteurSousPlafond);
+                if (mur.listeRevetements!=null && !mur.listeRevetements.isEmpty()){
                 prixDevis+=mur.devisMur();
+                }
             }
             for (Sol sol : niveau.listeSols){
                 sol.surfaceSol();
-                prixDevis+=sol.devisSol();
+                if (sol.listeRevetements!=null && !sol.listeRevetements.isEmpty()){
+                prixDevis+=sol.devisSol();}
             }
             for (Plafond plafond : niveau.listePlafonds){
                 plafond.surfacePlafond();
-                prixDevis+=plafond.devisPlafond();
+                if (plafond.listeRevetements!=null && !plafond.listeRevetements.isEmpty()){
+                prixDevis+=plafond.devisPlafond();}
             }
 
         }
@@ -42,7 +45,7 @@ public class Immeuble extends Batiment {
     public void sauvegarder() {
         System.out.println("Dans quel fichier voulez-vous sauvegarder le batiment ?");
         String nom_fichier_sortie = Lire.S();
-        File fichier = new File("C:/Users/gaspa/OneDrive/Documents/NetBeansProjects/Devis2024-A7_javafx/Devis2024-A7_javafx/src/main/java/devis/" + nom_fichier_sortie);
+        File fichier = new File("C:\\Users\\gaspa\\OneDrive\\Documents\\NetBeansProjects\\Devis2024-A7_javafx\\Devis2024-A7_javafx\\src\\main\\java\\devis/" + nom_fichier_sortie);
 
         if (!fichier.exists()) {
             System.out.println("Ce fichier n'existe pas.");
@@ -78,9 +81,15 @@ public class Immeuble extends Batiment {
 
         // Fermez le scanner si vous n'en avez plus besoin
     }
-    public void ouvrir(){
-        System.out.println("Veuillez entrer le fichier que vous voulez ouvrir :");
-        String nomFichier = Lire.S();
+    public void ouvrir(String nomDuFichier){
+        String nomFichier;
+        if (nomDuFichier.equals(null)){
+            System.out.println("Veuillez entrer le fichier que vous voulez ouvrir :");
+            nomFichier = Lire.S();
+        }
+        else {
+            nomFichier = nomDuFichier;
+        }
         /*ArrayList<Appartement> listeAppart = new ArrayList<Appartement>();
         ArrayList<Coin> listeCoins = new ArrayList<Coin>();
         ArrayList<Mur> listeMurs = new ArrayList<Mur>();

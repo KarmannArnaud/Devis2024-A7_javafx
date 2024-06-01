@@ -19,16 +19,14 @@ public class Devis2024 {
         
         System.out.println("Hello");
         Immeuble Bat7 = new Immeuble("Bat7");
-        Bat7.ouvrir();
-        System.out.println(Bat7.DevisBatiment());
-        Bat7.sauvegarder();
+
+
         
-        /*Niveau rezdechausser = new Niveau(0, 3, null);
+        Niveau rezdechausser = new Niveau(0, 3, null);
         Bat7.listeNiveau.add(rezdechausser);
         Appartement appartement = new Appartement(0, 0,null);
         Bat7.listeNiveau.get(0).listeAppart.add(appartement); // Tableau pour stocker les coins
-        Bat7.sauvegarder();
-        /*for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 int n = i * 3 + j ; // Calcul de l'index
                 rezdechausser.listeCoins.add(new Coin(n, i*3, j*3)); // Création du coin et stockage dans le tableau
@@ -46,7 +44,7 @@ public class Devis2024 {
                 n+=1;
             }
         }*/
-        /*Mur m0 = new Mur(0, rezdechausser.listeCoins.get(0), rezdechausser.listeCoins.get(1));
+        Mur m0 = new Mur(0, rezdechausser.listeCoins.get(0), rezdechausser.listeCoins.get(1));
         Mur m1 = new Mur(1, rezdechausser.listeCoins.get(0), rezdechausser.listeCoins.get(3));
         Mur m2 = new Mur(2, rezdechausser.listeCoins.get(1), rezdechausser.listeCoins.get(2));
         Mur m3 = new Mur(3, rezdechausser.listeCoins.get(1), rezdechausser.listeCoins.get(4));
@@ -101,29 +99,28 @@ public class Devis2024 {
         rezdechausser.listeSols.add(solSalon);
         rezdechausser.listeSols.add(solSalleDeBain);
         rezdechausser.listeSols.add(solCuisine);
-        solCuisine.listeRevetements.add(creerRevetement(rechercher_Revetement_Designation("Carrelage")));
+        System.out.println("llllll");
+        /*solCuisine.listeRevetements.add(creerRevetement(rechercher_Revetement_Designation("Carrelage")));
         solChambre.listeRevetements.add(solCuisine.listeRevetements.get(0));
         solSalon.listeRevetements.add(solCuisine.listeRevetements.get(0));
-        solSalleDeBain.listeRevetements.add(solCuisine.listeRevetements.get(0));
+        solSalleDeBain.listeRevetements.add(solCuisine.listeRevetements.get(0));*/
         Plafond plafondChambre = new Plafond(0,solPourPiece(chambre));
         Plafond plafondSalon = new Plafond(1,solPourPiece(salon));
-        Plafond plafondSalleDeBain = new Plafond(0,solPourPiece(salleDeBain));
-        Plafond plafondCuisine = new Plafond(0,solPourPiece(cuisine));
+        Plafond plafondSalleDeBain = new Plafond(2,solPourPiece(salleDeBain));
+        Plafond plafondCuisine = new Plafond(3,solPourPiece(cuisine));
         rezdechausser.listePlafonds.add(plafondChambre);
         rezdechausser.listePlafonds.add(plafondSalon);
         rezdechausser.listePlafonds.add(plafondSalleDeBain);
         rezdechausser.listePlafonds.add(plafondCuisine);
-        plafondChambre.listeRevetements.add(creerRevetement(rechercher_Revetement_Designation("Peinture")));
+        /*plafondChambre.listeRevetements.add(creerRevetement(rechercher_Revetement_Designation("Peinture")));
         plafondCuisine.listeRevetements.add(plafondChambre.listeRevetements.get(0));
         plafondSalon.listeRevetements.add(plafondChambre.listeRevetements.get(0));
-        plafondSalleDeBain.listeRevetements.add(plafondChambre.listeRevetements.get(0));
+        plafondSalleDeBain.listeRevetements.add(plafondChambre.listeRevetements.get(0));*/
         Tremie escalier = new Tremie(0, 2, 2);
         plafondSalon.listeTremies.add(escalier);
         plafondSalon.nbrTremies+=1;
 
-        for (int i=0;i<4;i++){
-            System.out.println(cuisine.listeMurs.get(i).toString());
-        }
+        System.out.println("ggggggg");
         
         
         
@@ -144,6 +141,7 @@ public class Devis2024 {
         m6.nbreFenetres=1;
         m7.nbreFenetres=1;
         m9.nbreFenetres=1;
+         System.out.println("ggggggg");
         /*m0.surfaceMur(3);
         m1.surfaceMur(3);
         m2.surfaceMur(3);
@@ -162,7 +160,7 @@ public class Devis2024 {
             rezdechausser.listeMurs.get(i+1).listeRevetements.add(m0.listeRevetements.get(0));
 
         } 
-        System.out.println(creerRevetement(rechercher_Revetement_Designation("Carrelage")));
+        System.out.println(creerRevetement(rechercher_Revetement_Designation("Carrelage")));*/
        /*  double devis = m0.devisMur();
         System.out.println(devis);*/
         /* 
@@ -189,8 +187,10 @@ public class Devis2024 {
             System.out.println(appartement.listePieces.get(i).listeMurs);
         }
        */
-      /*System.out.println(Bat7.DevisBatiment());
-      Bat7.sauvegarder();*/
+      System.out.println("ggggggg");
+      System.out.println(Bat7.DevisBatiment());
+      System.out.println("ggvrfveg");
+      Bat7.sauvegarder();
         }
         public static Revetement creerRevetement(String ligne) {
             String[] parts = ligne.split(";");
@@ -226,18 +226,18 @@ public class Devis2024 {
             String rev3 =null;
             String[] tab; 
             try {
-                BufferedReader Revetement = new BufferedReader(new FileReader("C:\\Users\\gaspa\\OneDrive\\Documents\\NetBeansProjects\\Devis2024-A7_javafx\\Devis2024-A7_javafx\\src\\main\\java\\devis"));
+                BufferedReader revetement = new BufferedReader(new FileReader("C:\\Users\\gaspa\\OneDrive\\Documents\\NetBeansProjects\\Devis2024-A7_javafx\\Devis2024-A7_javafx\\src\\main\\java\\devis/CatalogueRevetements.txt"));
                 String lignelue;// Ligne lue depula le fichier 
-                while ((lignelue=Revetement.readLine ())!=null){
+                while ((lignelue=revetement.readLine ())!=null){
                     tab=lignelue.split (";");
                 if(tab[1].equals(revetementRech)) {
                     System.out.println(lignelue);
-                    if (rev1.equals(null)){
+                    if (rev1==null){
                         rev1= lignelue ;}
-                        else if (rev2.equals(null)){
+                        else if (rev2==null){
                             rev2 = lignelue;
                         }
-                            else if (rev3.equals(null)){
+                            else if (rev3==null){
                                 rev3 = lignelue;
                             }
 
@@ -245,18 +245,11 @@ public class Devis2024 {
                 
         }
 
-                Revetement.close ();
+                revetement.close ();
                 System.out.print("Quel revetement voulez vous ? votre réponse devra etre rev suivi du numéro d'affichage dans la console :  ");
                 String chaine = Lire.S();
-                switch (chaine) {
-                    case "rev1":    
-                        return rev1;
-                    case "rev2":
-                        return rev2;
-                    case "rev3":
-                        return rev3;
-                    default:
-                        return null;
+                if (chaine.equals("rev1")){
+                    return rev1;
                 }
                 
                 
@@ -276,7 +269,7 @@ public class Devis2024 {
         
             public static String rechercher_Revetement_Designation_id(int revetementRech) {
                 String[] tab; 
-                try (BufferedReader Revetement = new BufferedReader(new FileReader("C:\\Users\\gaspa\\OneDrive\\Documents\\NetBeansProjects\\Devis2024-A7_javafx\\Devis2024-A7_javafx\\src\\main\\java\\devis"))) {
+                try (BufferedReader Revetement = new BufferedReader(new FileReader("C:\\Users\\gaspa\\OneDrive\\Documents\\NetBeansProjects\\Devis2024-A7_javafx\\Devis2024-A7_javafx\\src\\main\\java\\devis/CatalogueRevetements.txt"))) {
                     String lignelue; // Ligne lue depuis le fichier 
                     while ((lignelue = Revetement.readLine()) != null) {
                         tab = lignelue.split(";");

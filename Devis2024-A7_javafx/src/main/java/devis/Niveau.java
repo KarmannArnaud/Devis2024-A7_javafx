@@ -13,7 +13,7 @@ public class Niveau {
 
     int idniveau;
     double hauteurSousPlafond;
-    ArrayList<Appartement> listeAppart;
+    public ArrayList<Appartement> listeAppart;
     ArrayList<Coin> listeCoins;
     ArrayList<Mur> listeMurs;
     ArrayList<Plafond> listePlafonds;

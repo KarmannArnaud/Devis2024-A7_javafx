@@ -42,6 +42,11 @@ public double devisMur(){
 }
 @Override
 public String toString() {
+    if(!listeRevetements.isEmpty()){
     return ("Mur;"+idMur+";"+coinDebut.idCoin+";"+coinFin.idCoin+";"+nbrePortes+";"+nbreFenetres+";"+listeRevetements.get(0));
-}
+    }
+    else{
+        return("Mur;"+idMur+";"+coinDebut.idCoin+";"+coinFin.idCoin+";"+nbrePortes+";"+nbreFenetres);
+    }
+    }
 }

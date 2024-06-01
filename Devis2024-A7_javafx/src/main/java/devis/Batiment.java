@@ -11,7 +11,7 @@ package devis;
 import java.util.ArrayList;
 public abstract class Batiment {
     String idBatiment;
-    ArrayList<Niveau> listeNiveau;
+    public ArrayList<Niveau> listeNiveau;
     
     @Override
     public String toString() {
