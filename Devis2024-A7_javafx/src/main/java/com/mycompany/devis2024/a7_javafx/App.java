@@ -128,7 +128,7 @@ public void start4(Stage stage4, Immeuble immeuble) {
         stage3.setTitle("HBox with 9 VBox each containing 5 TextFields and a Button");
 
         // Créer une HBox pour contenir les 9 VBox
-        VBox grosseBoite = new VBox(50);
+        VBox grosseBoite = new VBox(20);
         HBox element = new HBox(10);
         grosseBoite.getChildren().add(element);
 
