@@ -32,8 +32,8 @@ public class Devis2024 {
                 rezdechausser.listeCoins.add(new Coin(n, i*3, j*3)); // Création du coin et stockage dans le tableau
             }
         }
-        /*
-        }*/
+      
+        
         Mur m0 = new Mur(0, rezdechausser.listeCoins.get(0), rezdechausser.listeCoins.get(1));
         Mur m1 = new Mur(1, rezdechausser.listeCoins.get(0), rezdechausser.listeCoins.get(3));
         Mur m2 = new Mur(2, rezdechausser.listeCoins.get(1), rezdechausser.listeCoins.get(2));
