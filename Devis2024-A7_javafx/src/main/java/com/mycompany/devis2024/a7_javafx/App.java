@@ -106,7 +106,9 @@ public void start4(Stage stage4, Immeuble immeuble) {
         
         TextField idA = new TextField();
         TextField idN = new TextField();
-        
+        Label tidA = new Label("Nom de l'appartement");
+        Label tidN = new Label("Nom du niveau ");
+        Label message3 = new Label("Creation du Batiment");
         Button btn3 = new Button();
         btn3.setText("Enregistrer");
         btn3.setOnAction(event -> {
@@ -118,8 +120,9 @@ public void start4(Stage stage4, Immeuble immeuble) {
             Appartement appart = new Appartement(idNiveau,idAppart,null);
             start3(stage2,Bat7,niveau,appart);
         });
-        VBox root2 = new VBox(10);
-        root2.getChildren().addAll(idN, idA, btn2,btn3);
+        VBox root2 = new VBox(20);
+        root2.getChildren().addAll(message3,tidN,idN,tidA, idA, btn2,btn3);
+        root2.setAlignment(Pos.CENTER);
         Scene secondScene = new Scene(root2, 600, 450);
 
         stage2.setScene(secondScene);
@@ -230,11 +233,11 @@ public void start4(Stage stage4, Immeuble immeuble) {
         TextField m4 = new TextField();
         Label tidPiece = new Label("Id Pieice :");
         Label tidSolP = new Label("Id Sol :");
-        Label tidPlafondP = new Label("");
-        Label tm1 = new Label("Mur 1:");
-        Label tm2 = new Label("Mur 2:");
-        Label tm3 = new Label("Mur 3:");
-        Label tm4 = new Label("Mur 4:");
+        Label tidPlafondP = new Label("Id Plafond :");
+        Label tm1 = new Label("Mur 1 :");
+        Label tm2 = new Label("Mur 2 :");
+        Label tm3 = new Label("Mur 3 :");
+        Label tm4 = new Label("Mur 4 :");
         Button creerPiece = new Button("Creer une Piece");
         vBox5.getChildren().add(tidPiece);
         vBox5.getChildren().add(idPiece);
