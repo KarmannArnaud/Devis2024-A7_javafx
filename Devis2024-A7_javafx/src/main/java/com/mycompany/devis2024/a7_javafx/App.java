@@ -42,7 +42,8 @@ public class App extends Application {
     @Override
     public void start(Stage stage) {
         stage.setTitle("First Scene");
-
+        Label message = new Label("Bonjour que voulez-vous faire ?");
+        message.setFont(new Font(40));
         // Créez le bouton pour la première scène
         Button btn1 = new Button();
         btn1.setText("Crée un batiment");
@@ -57,21 +58,34 @@ public class App extends Application {
         });
 
         // Créez le layout pour la première scène et ajoutez le bouton
-        HBox root1 = new HBox(10); // 10 est l'espacement entre les boutons
+        HBox root1 = new HBox(20); // 10 est l'espacement entre les boutons
         root1.getChildren().addAll(btn1, btn2);
-        Scene scene1 = new Scene(root1, 300, 250);
+        root1.setAlignment(Pos.CENTER);
+        BorderPane PPrinc = new BorderPane();
+        PPrinc.setCenter(message);
+        PPrinc.setBottom(root1);
+        root1.setTranslateY(-100);
+        Scene scene1 = new Scene(PPrinc, 600, 400);
 
         stage.setScene(scene1);
         stage.show();
     }
 public void start4(Stage stage4, Immeuble immeuble) {
         stage4.setTitle("First Scene");
+        Label message1 = new Label("Entrer le nom de votre ficher (il faut mettre .txt à la fin):");
+        message1.setFont(new Font(20));
         TextField fichier = new TextField();
-        Button ouvrir = new Button("ouvrir");
-        VBox Vbox1 = new VBox();
+        Button ouvrir = new Button("Ouvrir le fichier");
+        VBox Vbox1 = new VBox(20);
         Vbox1.getChildren().add(fichier);
         Vbox1.getChildren().add(ouvrir);
-        Scene scene4 = new Scene(Vbox1, 300, 250);
+        
+        Vbox1.setAlignment(Pos.CENTER);
+        Vbox1.setTranslateY(-100);
+        BorderPane root = new BorderPane();
+        root.setCenter(message1);
+        root.setBottom(Vbox1);
+        Scene scene4 = new Scene(root, 600, 400);
         ouvrir.setOnAction(event -> {
             String nomFichier = fichier.getText();
             immeuble.ouvrir(nomFichier);
@@ -85,7 +99,7 @@ public void start4(Stage stage4, Immeuble immeuble) {
 
         // Créez le bouton pour la deuxième scène
         Button btn2 = new Button();
-        btn2.setText("Return to First Scene");
+        btn2.setText("Retour en arrière");
         btn2.setOnAction(event -> start(stage2));  // Retour à la première scène
 
         // Créez le layout pour la deuxième scène et ajoutez le bouton
@@ -106,7 +120,7 @@ public void start4(Stage stage4, Immeuble immeuble) {
         });
         VBox root2 = new VBox(10);
         root2.getChildren().addAll(idN, idA, btn2,btn3);
-        Scene secondScene = new Scene(root2, 400, 250);
+        Scene secondScene = new Scene(root2, 600, 450);
 
         stage2.setScene(secondScene);
     }
@@ -122,9 +136,15 @@ public void start4(Stage stage4, Immeuble immeuble) {
         TextField idCoin = new TextField();
         TextField cx = new TextField();
         TextField cy = new TextField();
-        Button creerCoin = new Button("CreerCoin");
+        Label TidCoin = new Label("Coin :");
+        Label Tcx = new Label("Cx :");
+        Label Tcy = new Label("Cy :");
+        Button creerCoin = new Button("Creer un Coin");
+        vBox1.getChildren().add(TidCoin);
         vBox1.getChildren().add(idCoin);
+        vBox1.getChildren().add(Tcx);
         vBox1.getChildren().add(cx);
+        vBox1.getChildren().add(Tcy);
         vBox1.getChildren().add(cy);
         vBox1.getChildren().add(creerCoin);
         element.getChildren().add(vBox1);
@@ -134,9 +154,15 @@ public void start4(Stage stage4, Immeuble immeuble) {
         TextField idMur = new TextField();
         TextField cd = new TextField();
         TextField cf = new TextField();
-        Button creerMur = new Button("CreerMur");
+        Label TidMur = new Label("Mur :");
+        Label Tcd = new Label("Coin debut :");
+        Label Tcf = new Label("Coin fin: ");
+        Button creerMur = new Button("Creer un Mur");
+        vBox2.getChildren().add(TidMur);
         vBox2.getChildren().add(idMur);
+        vBox2.getChildren().add(Tcd);
         vBox2.getChildren().add(cd);
+        vBox2.getChildren().add(Tcf);
         vBox2.getChildren().add(cf);
         vBox2.getChildren().add(creerMur);
         element.getChildren().add(vBox2);
@@ -148,11 +174,21 @@ public void start4(Stage stage4, Immeuble immeuble) {
         TextField c2 = new TextField();
         TextField c3 = new TextField();
         TextField c4 = new TextField();
-        Button creerSol = new Button("CreerSol");
+        Label TidSol = new Label("Id");
+        Label Tc1 = new Label("Coin 1:");
+        Label Tc2 = new Label("Coin 2:");
+        Label Tc3 = new Label("Coin 3:");
+        Label Tc4 = new Label("Coin 4:");
+        Button creerSol = new Button("Creer un Sol");
+        vBox3.getChildren().add(TidSol);
         vBox3.getChildren().add(idSol);
+        vBox3.getChildren().add(Tc1);
         vBox3.getChildren().add(c1);
+        vBox3.getChildren().add(Tc2);
         vBox3.getChildren().add(c2);
+        vBox3.getChildren().add(Tc3);
         vBox3.getChildren().add(c3);
+        vBox3.getChildren().add(Tc4);
         vBox3.getChildren().add(c4);
         vBox3.getChildren().add(creerSol);
         element.getChildren().add(vBox3);
@@ -164,11 +200,21 @@ public void start4(Stage stage4, Immeuble immeuble) {
         TextField c6 = new TextField();
         TextField c7 = new TextField();
         TextField c8 = new TextField();
-        Button creerPlafond = new Button("CreerPlafond");
+        Label TidPlafond = new Label("Id:");
+        Label Tc5 = new Label("Coin 1:");
+        Label Tc6 = new Label("Coin 2:");
+        Label Tc7 = new Label("Coin 3:");
+        Label Tc8 = new Label("Coin 4:");
+        Button creerPlafond = new Button("Creer un Plafond");
+        vBox4.getChildren().add(TidPlafond);
         vBox4.getChildren().add(idPlafond);
+        vBox4.getChildren().add(Tc5);
         vBox4.getChildren().add(c5);
+        vBox4.getChildren().add(Tc6);
         vBox4.getChildren().add(c6);
+        vBox4.getChildren().add(Tc7);
         vBox4.getChildren().add(c7);
+        vBox4.getChildren().add(Tc8);
         vBox4.getChildren().add(c8);
         vBox4.getChildren().add(creerPlafond);
         element.getChildren().add(vBox4);
@@ -182,13 +228,27 @@ public void start4(Stage stage4, Immeuble immeuble) {
         TextField m2 = new TextField();
         TextField m3 = new TextField();
         TextField m4 = new TextField();
-        Button creerPiece = new Button("CreerPiece");
+        Label tidPiece = new Label("Id Pieice :");
+        Label tidSolP = new Label("Id Sol :");
+        Label tidPlafondP = new Label("");
+        Label tm1 = new Label("Mur 1:");
+        Label tm2 = new Label("Mur 2:");
+        Label tm3 = new Label("Mur 3:");
+        Label tm4 = new Label("Mur 4:");
+        Button creerPiece = new Button("Creer une Piece");
+        vBox5.getChildren().add(tidPiece);
         vBox5.getChildren().add(idPiece);
+        vBox5.getChildren().add(tidSolP);
         vBox5.getChildren().add(idSolP);
+        vBox5.getChildren().add(tidPlafondP);
         vBox5.getChildren().add(idPlafondP);
+        vBox5.getChildren().add(tm1);
         vBox5.getChildren().add(m1);
+        vBox5.getChildren().add(tm2);
         vBox5.getChildren().add(m2);
+        vBox5.getChildren().add(tm3);
         vBox5.getChildren().add(m3);
+        vBox5.getChildren().add(tm4);
         vBox5.getChildren().add(m4);
         vBox5.getChildren().add(creerPiece);
         element.getChildren().add(vBox5);
@@ -197,8 +257,12 @@ public void start4(Stage stage4, Immeuble immeuble) {
         VBox vBox6 = new VBox(10);
         TextField idPorte = new TextField();
         TextField murP = new TextField();
-        Button creerPorte = new Button("CreerPorte");
-        vBox6.getChildren().add(idPorte);
+        Label tidPorte = new Label("Id Porte :");
+        Label tmurP = new Label("Mur :");
+        Button creerPorte = new Button("Creer une Porte");
+        vBox6.getChildren().add(tidPorte);
+         vBox6.getChildren().add(idPorte);
+         vBox6.getChildren().add(tmurP);
         vBox6.getChildren().add(murP);
         vBox6.getChildren().add(creerPorte);
         element.getChildren().add(vBox6);
@@ -207,8 +271,12 @@ public void start4(Stage stage4, Immeuble immeuble) {
         VBox vBox7 = new VBox(10);
         TextField idFenetre = new TextField();
         TextField murF = new TextField();
-        Button creerFenetre = new Button("CreerFenetre");
+        Label tidFenetre = new Label("Id :");
+        Label tmurF = new Label("Mur :");
+        Button creerFenetre = new Button("Creer une Fenetre");
+        vBox7.getChildren().add(tidFenetre);
         vBox7.getChildren().add(idFenetre);
+        vBox7.getChildren().add(tmurF);
         vBox7.getChildren().add(murF);
         vBox7.getChildren().add(creerFenetre);
         element.getChildren().add(vBox7);
@@ -220,8 +288,12 @@ public void start4(Stage stage4, Immeuble immeuble) {
         VBox vBox9 = new VBox(10);
         TextField idTremie = new TextField();
         TextField SolT = new TextField();
-        Button creerTremie = new Button("CreerTremie");
+        Label tidTremie = new Label(" Id :");
+        Label tSolT = new Label("Sol :");
+        Button creerTremie = new Button("Creer un Tremie");
+        vBox9.getChildren().add(tidTremie);
         vBox9.getChildren().add(idTremie);
+        vBox9.getChildren().add(tSolT);
         vBox9.getChildren().add(SolT);
         vBox9.getChildren().add(creerTremie);
         element.getChildren().add(vBox9);
@@ -229,19 +301,27 @@ public void start4(Stage stage4, Immeuble immeuble) {
         VBox vBox8 = new VBox(10);
         TextField idSurface = new TextField();
         TextField typeRevetement = new TextField();
-        Button ajoutRevetement = new Button("ajoutRevetement");
+        Label tidSurface = new Label("Id :");
+        Label ttypeRevetement = new Label("Type de revetement :");
+        Button ajoutRevetement = new Button("Ajout de Revetement");
+        vBox8.getChildren().add(tidSurface);
         vBox8.getChildren().add(idSurface);
+        vBox8.getChildren().add(ttypeRevetement);
         vBox8.getChildren().add(typeRevetement);
         vBox8.getChildren().add(ajoutRevetement);
         element.getChildren().add(vBox8);
         
         VBox vBox10 = new VBox(10);
         TextField CodePromo = new TextField();
+        HBox devisBox = new HBox(10);
         Button devis = new Button("Devis");
         TextField enregistrer = new TextField();
-        Button  sauvegarde = new Button("enregistrer");
+        Label Save = new Label("Enregistrer le Devis :");
+        Button  sauvegarde = new Button("Enregistrer");
         vBox10.getChildren().add(CodePromo);
-        vBox10.getChildren().add(devis);
+        devisBox.getChildren().add(devis);
+        vBox10.getChildren().add(devisBox);
+        vBox10.getChildren().add(Save);
         vBox10.getChildren().add(enregistrer);
         vBox10.getChildren().add(sauvegarde);
         grosseBoite.getChildren().add(vBox10);
@@ -249,7 +329,7 @@ public void start4(Stage stage4, Immeuble immeuble) {
         devis.setOnAction(event -> {
             double prix= immeuble.DevisBatiment();
             Label afficheDevis = new Label(String.valueOf(prix));
-            grosseBoite.getChildren().add(afficheDevis);
+            devisBox.getChildren().add(afficheDevis);
         });
 
         Scene scene = new Scene(grosseBoite, 1400, 1000);
@@ -263,3 +343,4 @@ public void start4(Stage stage4, Immeuble immeuble) {
     }
 
 }
+
