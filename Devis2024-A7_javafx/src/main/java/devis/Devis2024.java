@@ -32,17 +32,7 @@ public class Devis2024 {
                 rezdechausser.listeCoins.add(new Coin(n, i*3, j*3)); // Création du coin et stockage dans le tableau
             }
         }
-        /*System.out.println("coin"+String.valueOf(1));
-        for (int i=0;i<8;i++){
-            int n=0;
-            if (i%3!=2){
-                murs[n]=new Mur(n,coins[i],coins[i+1]);
-                n+=1;
-            }
-            if (i<6){
-                murs[n]=new Mur(n,coins[i],coins[i+3]);
-                n+=1;
-            }
+        /*
         }*/
         Mur m0 = new Mur(0, rezdechausser.listeCoins.get(0), rezdechausser.listeCoins.get(1));
         Mur m1 = new Mur(1, rezdechausser.listeCoins.get(0), rezdechausser.listeCoins.get(3));
